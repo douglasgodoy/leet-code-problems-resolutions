@@ -13,4 +13,6 @@ var_countKDifference = function (nums, k) {
   return count;
 };
 
+// O(nˆ2)
+
 countKDifference([1, 2, 2, 1], 1); // 4

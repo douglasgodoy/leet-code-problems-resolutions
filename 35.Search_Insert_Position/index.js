@@ -17,7 +17,6 @@ var searchInsert = function (nums, target) {
     while (start < end) {
       if (target === nums[middle]) {
         return middle;
-        break;
       }
 
       if (target < nums[middle]) {
@@ -30,3 +29,5 @@ var searchInsert = function (nums, target) {
     }
   }
 };
+
+// O(n)
