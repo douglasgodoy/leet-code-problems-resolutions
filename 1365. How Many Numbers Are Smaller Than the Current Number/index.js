@@ -19,3 +19,6 @@ var smallerNumbersThanCurrent = function (nums) {
 
   return finalArray;
 };
+
+
+// O(n)
