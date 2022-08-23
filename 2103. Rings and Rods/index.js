@@ -26,3 +26,5 @@ var countPoints = function (rings) {
 
   return rodsCompleted;
 };
+
+//O(nˆ2)
