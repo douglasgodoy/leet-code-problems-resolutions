@@ -2,32 +2,27 @@
  * @param {string} s
  * @param {string} t
  * @return {boolean}
- */ var isSubsequence = function (s, t) {
-  const hashT = new Map();
+ */
+var isSubsequence = function (s, t) {
+  if (s.length > t.length) return false;
 
-  if (!s.length) return true;
+  const splitS = s.split("");
 
-  const splittedSStr = s.split("");
-  const splittedTStr = t.split("");
+  const string = t.split("");
+  for (let i = 0; i < splitS.length; i++) {
+    const letter = splitS[i];
+    const indexMatch = string.indexOf(letter);
 
-  let prevIdx = 0;
-
-  splittedTStr.forEach((char, idx) => hashT.set(char, idx));
-
-  let result;
-  for (let idx = 0; idx < splittedSStr.length; idx++) {
-    const ch = splittedSStr[idx];
-
-    if (hashT[ch] === undefined) return false;
-    if (hashT[ch] >= prevIdx) {
-      prevIdx = hashT[ch];
-      result = true;
-      continue;
+    if (indexMatch === -1) {
+      return false;
     }
-    result = false;
+
+    string.splice(0, indexMatch + 1);
   }
 
-  return result;
+  return true;
 };
 
-isSubsequence("aaaaaa", "bbaaaa");
+console.log(isSubsequence("abc", "ahbgdc")); //true
+console.log(isSubsequence("axc", "ahbgdc")); //false
+console.log(isSubsequence("aaaaaa", "bbaaaa")); //false
