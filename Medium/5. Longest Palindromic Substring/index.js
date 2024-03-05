@@ -26,7 +26,6 @@ var longestPalindrome = function (s) {
   }
 
   return result;
-  6;
 };
 
 console.log(longestPalindrome("babadd"));
