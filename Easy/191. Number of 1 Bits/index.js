@@ -3,7 +3,6 @@ var hammingWeight = function (n) {
     .toString(2)
     .split("")
     .filter((num) => num === "1");
-  console.log(decNumber);
   return decNumber.length;
 };
 
